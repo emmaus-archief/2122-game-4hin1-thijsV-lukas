@@ -2,8 +2,8 @@ Deze game is gebaseerd op het template voor 4HV van het Emmauscollege Rotterdam
 
 ## Mijn spel: *naam van het spel*
 Gemaakt door:
-- *naam van leerling 1*
-- *naam van leerling 2*
+- *Thijs Vossebelt*
+- *Lukas Haans*
 
 ### Beschrijving
 *korte beschrijving van het spel, wat je kunt doen in het spel, wat het doel is*
@@ -17,19 +17,20 @@ Basis: uitleg, spelen, afgaan en punten
 - [x] 1. maak index.html, style.css en script.js met canvas
 - [ ] 2. teken speler
         - Zet je code in de functie tekenAlles()
-- [ ] 3. beweeg speler
+- [ ] 3. beweeg speler 
         - Zet je code in de functie beweegAlles()
         - Kies de afmeting van speler
         - Gebruik variabalen spelerX en spelerY als middelpunt van de speler
 - [ ] 4. *(pas de volgende stappen in de planning zelf aan)*
-- [ ] x. teken je tegenspeler (vijanden of dingen die je moet pakken of doelen of ...)
-- [ ] x. teken een bal, kogel (als die in je spel zit)
-- [ ] x. beweeg de tegenspeler of je bal
-- [ ] x. zet punten op het scherm 
-- [ ] x. zorg dat je punten kunt scoren
+- [ ] x. teken de vijanden
+- [ ] x. teken een kogel, parkour, muntjes
+- [ ] x. beweeg de vijand 
+- [ ] x. muntenteller op het scherm zetten
+- [ ] x. zorg dat je de muntjes kunt pakken
 - [ ] x. zorg dat je af kunt
 - [ ] x. maak game-over-scherm
 - [ ] x. maak uitlegscherm
+
 
 ### Uitbreidingen 1
 Uitbreiding: *bedenk iets, bijvoorbeeld meer tegenstanders*
