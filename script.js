@@ -27,6 +27,13 @@ var spelerY = 600; // y-positie van speler
 var beweegAlles = function () {
   // speler
 
+  /* nummers keyCode */
+
+  if KeyIsDown(KEY_A)) {
+  spelerX=spelerX -1;
+  }
+
+
   // vijand
 
   // kogel
