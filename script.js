@@ -10,6 +10,7 @@
 /* globale variabelen die je gebruikt in je game */
 /* ********************************************* */
 
+const KEY_A = 65;
 const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
@@ -26,11 +27,8 @@ var spelerY = 600; // y-positie van speler
  */
 var beweegAlles = function () {
   // speler
-
-  /* nummers keyCode */
-
-  if KeyIsDown(KEY_A)) {
-  spelerX=spelerX -1;
+ if (keyIsDown(65)) {
+     spelerX=spelerX -1;
   }
 
 
@@ -58,7 +56,8 @@ var verwerkBotsing = function () {
  */
 var tekenAlles = function () {
   // achtergrond
-
+fill("orange")
+  rect(0,0,1280,720)
   // vijand
 
   // kogel
