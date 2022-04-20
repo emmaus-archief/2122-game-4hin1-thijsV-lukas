@@ -10,14 +10,21 @@
 /* globale variabelen die je gebruikt in je game */
 /* ********************************************* */
 
-const KEY_A = 65;
+
 const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
 
+const KEY_LEFT = 65;
+const KEY_UP = 87;
+const KEY_DOWN = 83;
+const KEY_RIGHT = 68;
+
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 
+var vijandX = 600;
+var vijandY = 500;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -27,9 +34,19 @@ var spelerY = 600; // y-positie van speler
  */
 var beweegAlles = function () {
   // speler
- if (keyIsDown(65)) {
-     spelerX=spelerX -1;
+ if (keyIsDown(KEY_LEFT)) {
+     spelerX = spelerX -1;
   }
+  if (keyIsDown(KEY_UP)) {
+     spelerY = spelerY -1;
+  }
+   if (keyIsDown(KEY_DOWN)) {
+     spelerY = spelerY +1;
+  }
+   if (keyIsDown(KEY_RIGHT)) {
+     spelerX = spelerX +1;
+  }
+  
 
 
   // vijand
@@ -44,7 +61,12 @@ var beweegAlles = function () {
  */
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
-
+if (spelerX - vijandX < 50 &&
+    spelerX - vijandX >-50 &&
+    spelerY - vijandY <50 &&
+   spelerY - vijandY > -50) {
+  console.log("Botsing");
+  }
   // botsing kogel tegen vijand
 
   // update punten en health
@@ -59,7 +81,10 @@ var tekenAlles = function () {
 fill("orange")
   rect(0,0,1280,720)
   // vijand
-
+  fill ("red");
+  rect(vijandX - 25, vijandY - 25, 50, 50);
+  fill("black");
+  ellipse(vijandX, vijandY, 10, 10);
   // kogel
 
   // speler
