@@ -78,7 +78,7 @@ if (spelerX - vijandX < 50 &&
  */
 var tekenAlles = function () {
   // achtergrond
-fill("orange")
+fill("blue")
   rect(0,0,1280,720)
   // vijand
   fill ("red");
