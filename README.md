@@ -16,14 +16,14 @@ Geef aan met [x] welke onderdelen af zijn
 ### Basisstappen
 Basis: uitleg, spelen, afgaan en punten
 - [x] 1. maak index.html, style.css en script.js met canvas
-- [ ] 2. teken speler
+- [x] 2. teken speler
         - Zet je code in de functie tekenAlles()
-- [ ] 3. beweeg speler 
+- [x] 3. beweeg speler 
         - Zet je code in de functie beweegAlles()
         - Kies de afmeting van speler
         - Gebruik variabalen spelerX en spelerY als middelpunt van de speler
 - [ ] 4. *(pas de volgende stappen in de planning zelf aan)*
-- [ ] x. teken de vijanden
+- [x] x. teken de vijanden
 - [ ] x. teken een kogel, parkour, muntjes
 - [ ] x. beweeg de vijand 
 - [ ] x. muntenteller op het scherm zetten

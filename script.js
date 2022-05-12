@@ -25,6 +25,8 @@ var spelerY = 600; // y-positie van speler
 
 var vijandX = 600;
 var vijandY = 500;
+
+
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -35,16 +37,16 @@ var vijandY = 500;
 var beweegAlles = function () {
   // speler
  if (keyIsDown(KEY_LEFT)) {
-     spelerX = spelerX -1;
+     spelerX = spelerX -5;
   }
   if (keyIsDown(KEY_UP)) {
-     spelerY = spelerY -1;
+     spelerY = spelerY -5;
   }
    if (keyIsDown(KEY_DOWN)) {
-     spelerY = spelerY +1;
+     spelerY = spelerY +5;
   }
    if (keyIsDown(KEY_RIGHT)) {
-     spelerX = spelerX +1;
+     spelerX = spelerX +5;
   }
   
 
@@ -88,7 +90,7 @@ fill("blue")
   // kogel
 
   // speler
-  fill("white");
+  fill("");
   rect(spelerX - 25, spelerY - 25, 50, 50);
   fill("black");
   ellipse(spelerX, spelerY, 10, 10);
@@ -142,3 +144,4 @@ function draw() {
 
   }
 }
+
