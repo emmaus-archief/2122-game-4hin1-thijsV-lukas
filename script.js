@@ -23,8 +23,10 @@ const KEY_RIGHT = 68;
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 
-var vijandX = 600;
+var vijandX = 1280;
 var vijandY = 500;
+
+
 
 
 /* ********************************************* */
@@ -52,7 +54,12 @@ var beweegAlles = function () {
 
 
   // vijand
-
+vijandX= vijandX - 5;
+  if (vijandX && vijandX < 0) {
+    vijandX = 1280
+  }
+  
+  
   // kogel
 };
 
@@ -69,6 +76,7 @@ if (spelerX - vijandX < 50 &&
    spelerY - vijandY > -50) {
   console.log("Botsing");
   }
+  
   // botsing kogel tegen vijand
 
   // update punten en health
@@ -95,7 +103,7 @@ fill("blue")
   fill("black");
   ellipse(spelerX, spelerY, 10, 10);
 
-  // punten en health
+ // punten en health
 
 };
 
