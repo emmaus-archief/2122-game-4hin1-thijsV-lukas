@@ -54,7 +54,7 @@ var beweegAlles = function () {
 
 
   // vijand
-vijandX= vijandX - 5;
+vijandX= vijandX - 10;
   if (vijandX && vijandX < 0) {
     vijandX = 1280
     vijandY = random(100,700);
@@ -89,17 +89,17 @@ if (spelerX - vijandX < 100 &&
  */
 var tekenAlles = function () {
   // achtergrond
-fill("blue")
+fill("gray")
   rect(0,0,1280,720)
   // vijand
-  fill ("red");
+  fill ("black");
   rect(vijandX - 75, vijandY - 75, 150, 150);
-  fill("black");
+  fill("white");
   ellipse(vijandX, vijandY, 30, 30);
   // kogel
 
   // speler
-  fill("");
+  fill("white");
   rect(spelerX - 25, spelerY - 25, 50, 50);
   fill("black");
   ellipse(spelerX, spelerY, 10, 10);
