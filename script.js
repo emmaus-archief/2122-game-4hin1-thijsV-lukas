@@ -57,6 +57,7 @@ var beweegAlles = function () {
 vijandX= vijandX - 5;
   if (vijandX && vijandX < 0) {
     vijandX = 1280
+    vijandY = random(100,700);
   }
   
   
@@ -70,10 +71,10 @@ vijandX= vijandX - 5;
  */
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
-if (spelerX - vijandX < 50 &&
-    spelerX - vijandX >-50 &&
-    spelerY - vijandY <50 &&
-   spelerY - vijandY > -50) {
+if (spelerX - vijandX < 100 &&
+    spelerX - vijandX >-100 &&
+    spelerY - vijandY < 100 &&
+   spelerY - vijandY > -100) {
   console.log("Botsing");
   }
   
@@ -92,9 +93,9 @@ fill("blue")
   rect(0,0,1280,720)
   // vijand
   fill ("red");
-  rect(vijandX - 25, vijandY - 25, 50, 50);
+  rect(vijandX - 75, vijandY - 75, 150, 150);
   fill("black");
-  ellipse(vijandX, vijandY, 10, 10);
+  ellipse(vijandX, vijandY, 30, 30);
   // kogel
 
   // speler
