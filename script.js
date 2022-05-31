@@ -13,6 +13,7 @@
 
 const SPELEN = 1;
 const GAMEOVER = 2;
+const UITLEG = 3;
 var spelStatus = SPELEN;
 
 const KEY_LEFT = 65;
@@ -71,12 +72,7 @@ vijandX= vijandX - 10;
  */
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
-if (spelerX - vijandX < 100 &&
-    spelerX - vijandX >-100 &&
-    spelerY - vijandY < 100 &&
-   spelerY - vijandY > -100) {
-  console.log("Botsing");
-  }
+
   
   // botsing kogel tegen vijand
 
@@ -113,6 +109,13 @@ fill("gray")
  * anders return false
  */
 var checkGameOver = function () {
+  if (spelerX - vijandX < 100 &&
+    spelerX - vijandX >-100 &&
+    spelerY - vijandY < 100 &&
+   spelerY - vijandY > -100) {
+  console.log("Botsing")
+    return true;
+  }
   // check of HP 0 is , of tijd op is, of ...
   return false;
 };
@@ -147,10 +150,35 @@ function draw() {
     if (checkGameOver()) {
       spelStatus = GAMEOVER;
     }
+  console.log("spelen");
   }
+
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
-
+console.log("game over");
+    textSize(20);
+    fill("red")
+    text("GAME OVER, druk spatie voor start", 100, 100)
+    if (keyIsDown(32)) { // spatie
+   spelStatus = UITLEG; 
+      
+    }
+    
+  }
+  if (spelStatus === UITLEG) {
+    // teken uitleg scherm
+  console.log("uitleg");
+    textSize(20);
+    fill("black")
+    rect(0,0, 1280, 720)
+    fill("red")
+    text("uitleg: ontwijk de meteorieten!, druk op enter om te starten.", 100, 100)
+    if (keyIsDown(13)) {
+      spelerX = 400;
+      vijandX = 1200;
+      spelStatus = SPELEN;
+      
+    }
   }
 }
 
