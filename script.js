@@ -30,6 +30,8 @@ var vijandY = 500;
 
 
 
+
+
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -156,9 +158,12 @@ function draw() {
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
 console.log("game over");
-    textSize(20);
+    textSize(70);
     fill("red")
-    text("GAME OVER, druk spatie voor start", 100, 100)
+    text("GAME OVER", 420, 260)
+    textSize(40);
+    fill("white")
+    text("druk op spatie om opnieuw te beginnen!", 300, 330)
     if (keyIsDown(32)) { // spatie
    spelStatus = UITLEG; 
       
@@ -168,11 +173,19 @@ console.log("game over");
   if (spelStatus === UITLEG) {
     // teken uitleg scherm
   console.log("uitleg");
-    textSize(20);
-    fill("black")
+    textSize(70);
+    fill("white")
     rect(0,0, 1280, 720)
-    fill("red")
-    text("uitleg: ontwijk de meteorieten!, druk op enter om te starten.", 100, 100)
+    textSize(70);
+    fill("black")
+    text("UITLEG", 500, 230)
+    textSize(40);
+    fill("black")
+    text("ontwijk de meteorieten!", 440, 330)
+    text("W = naar boven", 500, 380)
+    text("A = naar links", 500, 430)
+    text("D = naar rechts", 500, 480)
+    text("S = naar beneden", 500, 530)
     if (keyIsDown(13)) {
       spelerX = 400;
       vijandX = 1200;
