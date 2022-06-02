@@ -27,7 +27,7 @@ var spelerY = 600; // y-positie van speler
 var vijandX = 1280;
 var vijandY = 500;
 
-
+var tijd = 0;
 
 
 
@@ -63,7 +63,7 @@ vijandX= vijandX - 10;
     vijandY = random(100,700);
   }
   
-  
+  tijd = tijd + 1
   // kogel
 };
 
@@ -103,7 +103,9 @@ fill("gray")
   ellipse(spelerX, spelerY, 10, 10);
 
  // punten en health
-
+  textSize(70)
+  fill("white")
+  text("tijd: " + tijd, 540, 150);
 };
 
 /**
@@ -178,14 +180,15 @@ console.log("game over");
     rect(0,0, 1280, 720)
     textSize(70);
     fill("black")
-    text("UITLEG", 500, 230)
+    text("UITLEG", 510, 210)
     textSize(40);
     fill("black")
-    text("ontwijk de meteorieten!", 440, 330)
-    text("W = naar boven", 500, 380)
-    text("A = naar links", 500, 430)
-    text("D = naar rechts", 500, 480)
-    text("S = naar beneden", 500, 530)
+    text("ontwijk de meteorieten!", 440, 290)
+    text("W = naar boven", 500, 360)
+    text("A = naar links", 500, 410)
+    text("D = naar rechts", 500, 460)
+    text("S = naar beneden", 500, 510)
+    text("druk op enter om te starten!", 410, 590)
     if (keyIsDown(13)) {
       spelerX = 400;
       vijandX = 1200;
