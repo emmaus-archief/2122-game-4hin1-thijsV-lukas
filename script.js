@@ -62,8 +62,10 @@ vijandX= vijandX - 10;
     vijandX = 1280
     vijandY = random(100,700);
   }
-  
+
   tijd = tijd + 1
+   
+  
   // kogel
 };
 
@@ -193,6 +195,7 @@ console.log("game over");
       spelerX = 400;
       vijandX = 1200;
       spelStatus = SPELEN;
+      tijd = 0
       
     }
   }
