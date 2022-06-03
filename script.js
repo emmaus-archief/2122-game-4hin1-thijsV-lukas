@@ -14,7 +14,7 @@
 const SPELEN = 1;
 const GAMEOVER = 2;
 const UITLEG = 3;
-var spelStatus = SPELEN;
+var spelStatus = UITLEG;
 
 const KEY_LEFT = 65;
 const KEY_UP = 87;
@@ -30,8 +30,8 @@ var vijandY1 = 500;
 var vijandX2 = 1280;
 var vijandY2 = 500;
 
-var img;  //plaatjes
-
+var img1;  //plaatjes
+var img2;
 
 var score = 0;
 
@@ -93,7 +93,10 @@ var verwerkBotsing = function () {
 
 
 function preload() {
- img = loadImage('meteoriet.png');
+ img1 = loadImage('meteoriet.png');
+ img2 = loadImage('ufo.png');
+ img3 = loadImage('ruimteachtergrond.png')
+ img4 = loadImage('backgrounduitleg.png')
 
 }
 
@@ -105,8 +108,10 @@ function preload() {
 
 var tekenAlles = function () {
   // achtergrond
-fill("gray")
-  rect(0,0,1280,720)
+//fill("gray")
+  //rect(0, 0, 1280, 720)
+  image (img3, 0, 0, 1280, 720)
+ 
   // vijand
  // fill ("black");
  // rect(vijandX1 - 75, vijandY1 - 75, 150, 150);
@@ -118,15 +123,16 @@ fill("gray")
   //fill("white");
  // ellipse(vijandX2, vijandY2, 30, 30);
 
-  image (img, vijandX1-110, vijandY1-110, 220, 220);
-  image (img, vijandX2-110, vijandY2-110, 220, 220);
+  image (img1, vijandX1-110, vijandY1-110, 220, 220);
+  image (img1, vijandX2-110, vijandY2-110, 220, 220);
   // kogel
 
   // speler
-  fill("white");
-  rect(spelerX - 25, spelerY - 25, 50, 50);
-  fill("black");
-  ellipse(spelerX, spelerY, 10, 10);
+ // fill("white");
+  //rect(spelerX - 25, spelerY - 25, 50, 50);
+  //fill("black");
+ // ellipse(spelerX, spelerY, 10, 10);
+  image (img2, spelerX-50, spelerY-45, 100, 100);
   
  
 
@@ -207,7 +213,14 @@ console.log("game over");
     fill("white")
     text("druk op spatie om opnieuw te beginnen!", 300, 330)
     if (keyIsDown(32)) { // spatie
-   spelStatus = UITLEG; 
+      spelerX = 200;
+      spelerY = 500 
+      vijandX1 = 740;
+      vijandX2 = 1280;
+      vijandY1 = 200;
+      vijandY2 = 1080;
+      spelStatus = SPELEN;
+      score = 0
       
     }
     
@@ -215,14 +228,14 @@ console.log("game over");
   if (spelStatus === UITLEG) {
     // teken uitleg scherm
   console.log("uitleg");
+   // textSize(70);
+    //fill("white")
+   // rect(0,0, 1280, 720)
+    image (img4, 0, 0, 1280, 720)
     textSize(70);
     fill("white")
-    rect(0,0, 1280, 720)
-    textSize(70);
-    fill("black")
     text("UITLEG", 510, 210)
     textSize(40);
-    fill("black")
     text("ontwijk de meteorieten!", 440, 290)
     text("W = naar boven", 500, 360)
     text("A = naar links", 500, 410)
@@ -230,7 +243,8 @@ console.log("game over");
     text("S = naar beneden", 500, 510)
     text("druk op enter om te starten!", 410, 590)
     if (keyIsDown(13)) {
-      spelerX = 200;
+       spelerX = 200;
+       spelerY = 500
       vijandX1 = 740;
       vijandX2 = 1280;
       vijandY1 = 200;
