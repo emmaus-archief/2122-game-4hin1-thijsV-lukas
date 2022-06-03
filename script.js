@@ -21,13 +21,16 @@ const KEY_UP = 87;
 const KEY_DOWN = 83;
 const KEY_RIGHT = 68;
 
-var spelerX = 600; // x-positie van speler
-var spelerY = 600; // y-positie van speler
+var spelerX = 200          // x-positie van speler
+var spelerY = 360        // y-positie van speler
 
-var vijandX = 1280;
-var vijandY = 500;
+var vijandX1 = 740;
+var vijandY1 = 500;
 
-var tijd = 0;
+var vijandX2 = 1280;
+var vijandY2 = 500;
+
+var score = 0;
 
 
 
@@ -57,13 +60,19 @@ var beweegAlles = function () {
 
 
   // vijand
-vijandX= vijandX - 10;
-  if (vijandX && vijandX < 0) {
-    vijandX = 1280
-    vijandY = random(100,700);
+vijandX1= vijandX1 - 17,5;
+  if (vijandX1 && vijandX1 < 0) {
+    vijandX1 = 1280
+    vijandY1 = random(100,700);
   }
 
-  tijd = tijd + 1
+  vijandX2 = vijandX2 - 17,5;
+  if (vijandX2 && vijandX2 < 0) {
+    vijandX2 = 1280
+    vijandY2 = random(100,700);
+  }
+
+ score = score + 1
    
   
   // kogel
@@ -93,9 +102,14 @@ fill("gray")
   rect(0,0,1280,720)
   // vijand
   fill ("black");
-  rect(vijandX - 75, vijandY - 75, 150, 150);
+  rect(vijandX1 - 75, vijandY1 - 75, 150, 150);
   fill("white");
-  ellipse(vijandX, vijandY, 30, 30);
+  ellipse(vijandX1, vijandY1, 30, 30);
+
+   fill ("black");
+  rect(vijandX2 - 75, vijandY2 - 75, 150, 150);
+  fill("white");
+  ellipse(vijandX2, vijandY2, 30, 30);
   // kogel
 
   // speler
@@ -107,7 +121,7 @@ fill("gray")
  // punten en health
   textSize(70)
   fill("white")
-  text("tijd: " + tijd, 540, 150);
+  text("score: " + score, 490, 150);
 };
 
 /**
@@ -115,10 +129,18 @@ fill("gray")
  * anders return false
  */
 var checkGameOver = function () {
-  if (spelerX - vijandX < 100 &&
-    spelerX - vijandX >-100 &&
-    spelerY - vijandY < 100 &&
-   spelerY - vijandY > -100) {
+  if (spelerX - vijandX1 < 100 &&
+    spelerX - vijandX1 >-100 &&
+    spelerY - vijandY1 < 100 &&
+   spelerY - vijandY1 > -100) {
+  console.log("Botsing")
+    return true;
+  }
+
+   if (spelerX - vijandX2 < 100 &&
+    spelerX - vijandX2 >-100 &&
+    spelerY - vijandY2 < 100 &&
+   spelerY - vijandY2 > -100) {
   console.log("Botsing")
     return true;
   }
@@ -192,8 +214,11 @@ console.log("game over");
     text("S = naar beneden", 500, 510)
     text("druk op enter om te starten!", 410, 590)
     if (keyIsDown(13)) {
-      spelerX = 400;
-      vijandX = 1200;
+      spelerX = 200;
+      vijandX1 = 740;
+      vijandX2 = 1280;
+      vijandY1 = 200;
+      vijandY2 = 1080;
       spelStatus = SPELEN;
       tijd = 0
       
