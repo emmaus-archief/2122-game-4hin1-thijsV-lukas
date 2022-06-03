@@ -30,6 +30,9 @@ var vijandY1 = 500;
 var vijandX2 = 1280;
 var vijandY2 = 500;
 
+var img;  //plaatjes
+
+
 var score = 0;
 
 
@@ -84,32 +87,39 @@ vijandX1= vijandX1 - 17,5;
  * Updatet globale variabelen punten en health
  */
 var verwerkBotsing = function () {
-  // botsing speler tegen vijand
-
-  
-  // botsing kogel tegen vijand
-
-  // update punten en health
-
 };
 
-/**
- * Tekent spelscherm
- */
+
+
+
+function preload() {
+ img = loadImage('meteoriet.png');
+
+}
+
+
+
+
+
+
+
 var tekenAlles = function () {
   // achtergrond
 fill("gray")
   rect(0,0,1280,720)
   // vijand
-  fill ("black");
-  rect(vijandX1 - 75, vijandY1 - 75, 150, 150);
-  fill("white");
-  ellipse(vijandX1, vijandY1, 30, 30);
+ // fill ("black");
+ // rect(vijandX1 - 75, vijandY1 - 75, 150, 150);
+  //fill("white");
+//  ellipse(vijandX1, vijandY1, 30, 30);
 
-   fill ("black");
-  rect(vijandX2 - 75, vijandY2 - 75, 150, 150);
-  fill("white");
-  ellipse(vijandX2, vijandY2, 30, 30);
+  // fill ("black");
+ // rect(vijandX2 - 75, vijandY2 - 75, 150, 150);
+  //fill("white");
+ // ellipse(vijandX2, vijandY2, 30, 30);
+
+  image (img, vijandX1-110, vijandY1-110, 220, 220);
+  image (img, vijandX2-110, vijandY2-110, 220, 220);
   // kogel
 
   // speler
@@ -117,11 +127,15 @@ fill("gray")
   rect(spelerX - 25, spelerY - 25, 50, 50);
   fill("black");
   ellipse(spelerX, spelerY, 10, 10);
+  
+ 
 
  // punten en health
   textSize(70)
   fill("white")
   text("score: " + score, 490, 150);
+
+  
 };
 
 /**
@@ -175,6 +189,8 @@ function draw() {
     beweegAlles();
     verwerkBotsing();
     tekenAlles();
+  
+    
     if (checkGameOver()) {
       spelStatus = GAMEOVER;
     }
@@ -220,7 +236,7 @@ console.log("game over");
       vijandY1 = 200;
       vijandY2 = 1080;
       spelStatus = SPELEN;
-      tijd = 0
+      score = 0
       
     }
   }
