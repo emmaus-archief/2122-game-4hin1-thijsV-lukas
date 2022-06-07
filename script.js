@@ -16,16 +16,16 @@ const GAMEOVER = 2;
 const UITLEG = 3;
 var spelStatus = UITLEG;
 
-const KEY_LEFT = 65;
-const KEY_UP = 87;
-const KEY_DOWN = 83;
-const KEY_RIGHT = 68;
+const KEY_LEFT = 65;     //A
+const KEY_UP = 87;       //W
+const KEY_DOWN = 83;     //S
+const KEY_RIGHT = 68;    //D
 
-var spelerX = 200          // x-positie van speler
+var spelerX = 200        // x-positie van speler
 var spelerY = 360        // y-positie van speler
 
-var vijandX1 = 740;
-var vijandY1 = 500;
+var vijandX1 = 740;      // x-positie van vijand 
+var vijandY1 = 500;      // y-positie van speler
 
 var vijandX2 = 1280;
 var vijandY2 = 500;
@@ -33,8 +33,8 @@ var vijandY2 = 500;
 var img1;  //plaatjes
 var img2;
 
-var score = 0;
-var highscore = 0;
+var score = 0;  //score
+var highscore = 0;  //highscore
 
 
 
@@ -46,53 +46,59 @@ var highscore = 0;
 /**
  * Updatet globale variabelen met posities van speler, vijanden en kogels
  */
-var beweegAlles = function () {
+var beweegAlles = function () { 
   // speler
- if (keyIsDown(KEY_LEFT)) {
-     spelerX = spelerX -5;
+ if (keyIsDown(KEY_LEFT)) {  //A
+     spelerX = spelerX -6;
   }
-  if (keyIsDown(KEY_UP)) {
-     spelerY = spelerY -5;
+  if (keyIsDown(KEY_UP)) {  //W
+     spelerY = spelerY -6;
   }
-   if (keyIsDown(KEY_DOWN)) {
-     spelerY = spelerY +5;
+   if (keyIsDown(KEY_DOWN)) {  //S
+     spelerY = spelerY +6;
   }
-   if (keyIsDown(KEY_RIGHT)) {
-     spelerX = spelerX +5;
+   if (keyIsDown(KEY_RIGHT)) {  //D
+     spelerX = spelerX +6;
   }
   
 
 
   // vijand
- vijandX1 = vijandX1 - 10;
+ vijandX1 = vijandX1 - 10;  //bewegen vijand
   if (vijandX1 && vijandX1 < 0) {
     vijandX1 = 1280
     vijandY1 = random(100,700);
   }
 
-  vijandX2 = vijandX2 - 10;
+  vijandX2 = vijandX2 - 10;  //bewegen vijand
   if (vijandX2 && vijandX2 < 0) {
     vijandX2 = 1280
     vijandY2 = random(100,700);
   }
 
-  score = score + 1
+  score = score + 1  //score
   
-  if (score > highscore) {
+  if (score > highscore) {  //highscore
     highscore = score
  }
   
-   if (score > 500) {
+   if (score > 500) {  //vijand sneller bij 500
      vijandX1 = vijandX1 - 2,5;
      vijandX2 = vijandX2 - 2,5;
    }
-   if (score > 1000) {
+   if (score > 1000) {  //vijand sneller bij 1000
+     vijandX1 = vijandX1 - 2,5;
+     vijandX2 = vijandX2 - 2,5;
+   }
+  if (score > 1500) {  //vijand sneller bij 1500
+     vijandX1 = vijandX1 - 2,5;
+     vijandX2 = vijandX2 - 2,5;
+   }
+  if (score > 2000) {  //vijand sneller bij 2000
      vijandX1 = vijandX1 - 2,5;
      vijandX2 = vijandX2 - 2,5;
    }
      
-  
-  // kogel
 };
 
 /**
@@ -116,17 +122,13 @@ function preload() {
 
 
 
-
-
-
-
 var tekenAlles = function () {
   // achtergrond
 //fill("gray")
   //rect(0, 0, 1280, 720)
   image (img3, 0, 0, 1280, 720)
  
-  // vijand
+  // vijand oude stappen
  // fill ("black");
  // rect(vijandX1 - 75, vijandY1 - 75, 150, 150);
   //fill("white");
@@ -141,7 +143,7 @@ var tekenAlles = function () {
   image (img1, vijandX2-110, vijandY2-110, 220, 220);
   // kogel
 
-  // speler
+  // speler oude stappen
  // fill("white");
   //rect(spelerX - 25, spelerY - 25, 50, 50);
   //fill("black");
@@ -150,10 +152,10 @@ var tekenAlles = function () {
   
  
 
- // punten en health
+ // score
   textSize(70)
   fill("white")
-  text("score: " + score, 490, 150);
+  text("score: " + score, 490, 100);
   
   textSize (50)
   fill("white")
