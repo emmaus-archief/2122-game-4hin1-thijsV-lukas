@@ -34,6 +34,7 @@ var img1;  //plaatjes
 var img2;
 
 var score = 0;
+var highscore = 0;
 
 
 
@@ -63,20 +64,30 @@ var beweegAlles = function () {
 
 
   // vijand
-vijandX1= vijandX1 - 17,5;
+ vijandX1 = vijandX1 - 10;
   if (vijandX1 && vijandX1 < 0) {
     vijandX1 = 1280
     vijandY1 = random(100,700);
   }
 
-  vijandX2 = vijandX2 - 17,5;
+  vijandX2 = vijandX2 - 10;
   if (vijandX2 && vijandX2 < 0) {
     vijandX2 = 1280
     vijandY2 = random(100,700);
   }
 
- score = score + 1
-   
+  score = score + 1
+  
+  if (score > highscore) {
+    highscore = score
+ }
+  
+  // if (score > 500) {
+   //  vijandX1 = vijandX1 - 12,5;
+   //  vijandX2 = vijandX2 - 12,5;
+  // }
+     
+     
   
   // kogel
 };
@@ -140,6 +151,10 @@ var tekenAlles = function () {
   textSize(70)
   fill("white")
   text("score: " + score, 490, 150);
+  
+  textSize (50)
+  fill("white")
+  text("highscore: " + highscore, 880, 50 )
 
   
 };
