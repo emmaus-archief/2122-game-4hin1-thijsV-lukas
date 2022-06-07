@@ -82,11 +82,14 @@ var beweegAlles = function () {
     highscore = score
  }
   
-  // if (score > 500) {
-   //  vijandX1 = vijandX1 - 12,5;
-   //  vijandX2 = vijandX2 - 12,5;
-  // }
-     
+   if (score > 500) {
+     vijandX1 = vijandX1 - 2,5;
+     vijandX2 = vijandX2 - 2,5;
+   }
+   if (score > 1000) {
+     vijandX1 = vijandX1 - 2,5;
+     vijandX2 = vijandX2 - 2,5;
+   }
      
   
   // kogel
