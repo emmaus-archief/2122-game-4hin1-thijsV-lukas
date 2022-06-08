@@ -61,7 +61,22 @@ var beweegAlles = function () {
      spelerX = spelerX +6;
   }
   
+if (spelerX < 50) {
+  spelerX = 50 ;
+}
 
+if (spelerX > 1230) {
+  spelerX = 1230 ;
+}
+
+if (spelerY < 50) {
+  spelerY = 50;
+}
+
+ if (spelerY > 680) {
+  spelerY = 680 ;
+} 
+  
 
   // vijand
  vijandX1 = vijandX1 - 10;  //bewegen vijand
@@ -98,7 +113,14 @@ var beweegAlles = function () {
      vijandX1 = vijandX1 - 2,5;
      vijandX2 = vijandX2 - 2,5;
    }
-     
+  if (score > 4000) {  //vijand sneller bij 4000
+     vijandX1 = vijandX1 - 2,5;
+     vijandX2 = vijandX2 - 2,5;
+   }
+  if (score > 6000) {  //vijand sneller bij 6000
+     vijandX1 = vijandX1 - 2,5;
+     vijandX2 = vijandX2 - 2,5;
+   }
 };
 
 /**
