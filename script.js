@@ -10,7 +10,6 @@
 /* globale variabelen die je gebruikt in je game */
 /* ********************************************* */
 
-
 const SPELEN = 1;
 const GAMEOVER = 2;
 const UITLEG = 3;
@@ -37,8 +36,6 @@ var score = 0;  //score
 var highscore = 0;  //highscore
 
 
-
-
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -61,38 +58,31 @@ var beweegAlles = function () {
      spelerX = spelerX +6;
   }
   
-if (spelerX < 50) {
+  if (spelerX < 50) {
   spelerX = 50 ;
-}
-
-if (spelerX > 1230) {
+ }
+  if (spelerX > 1230) {
   spelerX = 1230 ;
-}
-
-if (spelerY < 50) {
+ }
+  if (spelerY < 50) {
   spelerY = 50;
-}
-
- if (spelerY > 680) {
+ }
+  if (spelerY > 680) {
   spelerY = 680 ;
-} 
-  
-
+ } 
   // vijand
- vijandX1 = vijandX1 - 10;  //bewegen vijand
+  vijandX1 = vijandX1 - 10;  //bewegen vijand1
   if (vijandX1 && vijandX1 < 0) {
     vijandX1 = 1280
     vijandY1 = random(100,700);
   }
-
-  vijandX2 = vijandX2 - 10;  //bewegen vijand
+  vijandX2 = vijandX2 - 10;  //bewegen vijand2
   if (vijandX2 && vijandX2 < 0) {
     vijandX2 = 1280
     vijandY2 = random(100,700);
   }
 
   score = score + 1  //score
-  
   if (score > highscore) {  //highscore
     highscore = score
  }
@@ -105,11 +95,11 @@ if (spelerY < 50) {
      vijandX1 = vijandX1 - 2,5;
      vijandX2 = vijandX2 - 2,5;
    }
-  if (score > 1500) {  //vijand sneller bij 1500
+   if (score > 1500) {  //vijand sneller bij 1500
      vijandX1 = vijandX1 - 2,5;
      vijandX2 = vijandX2 - 2,5;
    }
-  if (score > 2000) {  //vijand sneller bij 2000
+   if (score > 2000) {  //vijand sneller bij 2000
      vijandX1 = vijandX1 - 2,5;
      vijandX2 = vijandX2 - 2,5;
    }
@@ -121,30 +111,23 @@ if (spelerY < 50) {
      vijandX1 = vijandX1 - 2,5;
      vijandX2 = vijandX2 - 2,5;
    }
-};
-
+  };
 /**
  * Checkt botsingen
  * Verwijdert neergeschoten dingen
  * Updatet globale variabelen punten en health
  */
-var verwerkBotsing = function () {
-};
+  var verwerkBotsing = function () {
+  };
 
+  function preload() {
+  img1 = loadImage('meteoriet.png');
+  img2 = loadImage('ufo.png');
+  img3 = loadImage('ruimteachtergrond.png')
+  img4 = loadImage('backgrounduitleg.png')
+  }
 
-
-
-function preload() {
- img1 = loadImage('meteoriet.png');
- img2 = loadImage('ufo.png');
- img3 = loadImage('ruimteachtergrond.png')
- img4 = loadImage('backgrounduitleg.png')
-
-}
-
-
-
-var tekenAlles = function () {
+  var tekenAlles = function () {
   // achtergrond
 //fill("gray")
   //rect(0, 0, 1280, 720)
@@ -160,7 +143,7 @@ var tekenAlles = function () {
  // rect(vijandX2 - 75, vijandY2 - 75, 150, 150);
   //fill("white");
  // ellipse(vijandX2, vijandY2, 30, 30);
-
+  
   image (img1, vijandX1-110, vijandY1-110, 220, 220);
   image (img1, vijandX2-110, vijandY2-110, 220, 220);
   // kogel
@@ -171,10 +154,7 @@ var tekenAlles = function () {
   //fill("black");
  // ellipse(spelerX, spelerY, 10, 10);
   image (img2, spelerX-50, spelerY-45, 100, 100);
-  
- 
-
- // score
+  // score
   textSize(70)
   fill("white")
   text("score: " + score, 490, 100);
@@ -182,33 +162,29 @@ var tekenAlles = function () {
   textSize (50)
   fill("white")
   text("highscore: " + highscore, 880, 50 )
-
-  
-};
-
+  };
 /**
  * return true als het gameover is
  * anders return false
  */
-var checkGameOver = function () {
+  var checkGameOver = function () {
   if (spelerX - vijandX1 < 100 &&
     spelerX - vijandX1 >-100 &&
     spelerY - vijandY1 < 100 &&
-   spelerY - vijandY1 > -100) {
-  console.log("Botsing")
+    spelerY - vijandY1 > -100) {
+    console.log("Botsing")
     return true;
   }
-
    if (spelerX - vijandX2 < 100 &&
     spelerX - vijandX2 >-100 &&
     spelerY - vijandY2 < 100 &&
-   spelerY - vijandY2 > -100) {
-  console.log("Botsing")
+    spelerY - vijandY2 > -100) {
+    console.log("Botsing")
     return true;
   }
   // check of HP 0 is , of tijd op is, of ...
   return false;
-};
+  };
 
 /* ********************************************* */
 /* setup() en draw() functies / hoofdprogramma   */
@@ -219,41 +195,39 @@ var checkGameOver = function () {
  * de code in deze functie wordt één keer uitgevoerd door
  * de p5 library, zodra het spel geladen is in de browser
  */
-function setup() {
+  function setup() {
   // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
   createCanvas(1280, 720);
-
-  // Kleur de achtergrond blauw, zodat je het kunt zien
   background('blue');
-}
+  }
 
 /**
  * draw
  * de code in deze functie wordt 50 keer per seconde
  * uitgevoerd door de p5 library, nadat de setup functie klaar is
  */
-function draw() {
+  function draw() {
   if (spelStatus === SPELEN) {
     beweegAlles();
     verwerkBotsing();
     tekenAlles();
   
-    
     if (checkGameOver()) {
       spelStatus = GAMEOVER;
     }
-  console.log("spelen");
-  }
+   console.log("spelen");
+   }
 
-  if (spelStatus === GAMEOVER) {
+    if (spelStatus === GAMEOVER) {
     // teken game-over scherm
-console.log("game over");
+    console.log("game over");
     textSize(70);
     fill("red")
     text("GAME OVER", 420, 260)
     textSize(40);
     fill("white")
     text("druk op spatie om opnieuw te beginnen!", 300, 330)
+    
     if (keyIsDown(32)) { // spatie
       spelerX = 200;
       spelerY = 500 
@@ -263,13 +237,12 @@ console.log("game over");
       vijandY2 = 1080;
       spelStatus = SPELEN;
       score = 0
-      
+      }
     }
-    
-  }
+  
   if (spelStatus === UITLEG) {
     // teken uitleg scherm
-  console.log("uitleg");
+    console.log("uitleg");
    // textSize(70);
     //fill("white")
    // rect(0,0, 1280, 720)
@@ -287,14 +260,13 @@ console.log("game over");
     if (keyIsDown(13)) {
        spelerX = 200;
        spelerY = 500
-      vijandX1 = 740;
-      vijandX2 = 1280;
-      vijandY1 = 200;
-      vijandY2 = 1080;
-      spelStatus = SPELEN;
-      score = 0
-      
-    }
-  }
+       vijandX1 = 740;
+       vijandX2 = 1280;
+       vijandY1 = 200;
+       vijandY2 = 1080;
+       spelStatus = SPELEN;
+       score = 0
+      }
+   }
 }
 
