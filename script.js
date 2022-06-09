@@ -1,9 +1,9 @@
 /* Game opdracht
    Informatica - Emmauscollege Rotterdam
-   Template voor een game in JavaScript met de p5 library
 
-   Begin met dit template voor je game opdracht,
-   voeg er je eigen code aan toe.
+Dit is onze game Space Race!
+ontwijk de meteorieten!
+
  */
 
 /* ********************************************* */
@@ -129,32 +129,16 @@ var beweegAlles = function () {
 
   var tekenAlles = function () {
   // achtergrond
-//fill("gray")
-  //rect(0, 0, 1280, 720)
   image (img3, 0, 0, 1280, 720)
  
-  // vijand oude stappen
- // fill ("black");
- // rect(vijandX1 - 75, vijandY1 - 75, 150, 150);
-  //fill("white");
-//  ellipse(vijandX1, vijandY1, 30, 30);
-
-  // fill ("black");
- // rect(vijandX2 - 75, vijandY2 - 75, 150, 150);
-  //fill("white");
- // ellipse(vijandX2, vijandY2, 30, 30);
-  
+ //vijand
   image (img1, vijandX1-110, vijandY1-110, 220, 220);
   image (img1, vijandX2-110, vijandY2-110, 220, 220);
-  // kogel
 
-  // speler oude stappen
- // fill("white");
-  //rect(spelerX - 25, spelerY - 25, 50, 50);
-  //fill("black");
- // ellipse(spelerX, spelerY, 10, 10);
+  //speler
   image (img2, spelerX-50, spelerY-45, 100, 100);
-  // score
+  
+    // score
   textSize(70)
   fill("white")
   text("score: " + score, 490, 100);
@@ -182,7 +166,7 @@ var beweegAlles = function () {
     console.log("Botsing")
     return true;
   }
-  // check of HP 0 is , of tijd op is, of ...
+  
   return false;
   };
 
@@ -200,7 +184,6 @@ var beweegAlles = function () {
   createCanvas(1280, 720);
   background('blue');
   }
-
 /**
  * draw
  * de code in deze functie wordt 50 keer per seconde
@@ -219,7 +202,8 @@ var beweegAlles = function () {
    }
 
     if (spelStatus === GAMEOVER) {
-    // teken game-over scherm
+    
+      // teken game-over scherm
     console.log("game over");
     textSize(70);
     fill("red")
@@ -243,13 +227,13 @@ var beweegAlles = function () {
   if (spelStatus === UITLEG) {
     // teken uitleg scherm
     console.log("uitleg");
-   // textSize(70);
-    //fill("white")
-   // rect(0,0, 1280, 720)
     image (img4, 0, 0, 1280, 720)
-    textSize(70);
+    textSize(90);
+    fill ("white")
+    text("SPACE RACE", 510, 210)
+   textSize(60);
     fill("white")
-    text("UITLEG", 510, 210)
+    text("UITLEG", 510, 280)
     textSize(40);
     text("ontwijk de meteorieten!", 440, 290)
     text("W = naar boven", 500, 360)
