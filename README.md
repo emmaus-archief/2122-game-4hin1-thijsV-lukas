@@ -24,18 +24,18 @@ Basis: uitleg, spelen, afgaan en punten
         - Gebruik variabalen spelerX en spelerY als middelpunt van de speler
 - [ ] 4. *(pas de volgende stappen in de planning zelf aan)*
 - [x] x. teken de vijanden
-- [ ] x. teken een kogel, parkour, muntjes
-- [ ] x. beweeg de vijand 
-- [ ] x. muntenteller op het scherm zetten
-- [ ] x. zorg dat je de muntjes kunt pakken
-- [ ] x. zorg dat je af kunt
-- [ ] x. maak game-over-scherm
-- [ ] x. maak uitlegscherm
+- [x] x. teken een kogel, parkour, muntjes
+- [x] x. beweeg de vijand 
+- [x] x. muntenteller op het scherm zetten
+- [x] x. zorg dat je score kan krijgen
+- [x] x. zorg dat je af kunt
+- [x] x. maak game-over-scherm
+- [x] x. maak uitlegscherm
 
 
 ### Uitbreidingen 1
 Uitbreiding: *bedenk iets, bijvoorbeeld meer tegenstanders*
-- [ ] *later uitwerken*
+- [x] 2e tegenstander
 - [ ] *later uitwerken*
 - [ ] *later uitwerken*
 
