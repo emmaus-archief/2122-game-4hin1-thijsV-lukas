@@ -230,16 +230,16 @@ var beweegAlles = function () {
     image (img4, 0, 0, 1280, 720)
     textSize(90);
     fill ("white")
-    text("SPACE RACE", 510, 210)
+    text("SPACE RACE", 360, 170)
    textSize(60);
     fill("white")
-    text("UITLEG", 510, 280)
+    text("UITLEG", 530, 260)
     textSize(40);
-    text("ontwijk de meteorieten!", 440, 290)
-    text("W = naar boven", 500, 360)
-    text("A = naar links", 500, 410)
-    text("D = naar rechts", 500, 460)
-    text("S = naar beneden", 500, 510)
+    text("ontwijk de meteorieten!", 440, 330)
+    text("W = naar boven", 495, 380)
+    text("A = naar links", 500, 430)
+    text("D = naar rechts", 500, 480)
+    text("S = naar beneden", 500, 530)
     text("druk op enter om te starten!", 410, 590)
     if (keyIsDown(13)) {
        spelerX = 200;
